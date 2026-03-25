@@ -9,46 +9,9 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from "./pages/__root"
-import { Route as VerifyEmailRouteImport } from "./pages/verify-email"
-import { Route as SignupOrganizationRouteImport } from "./pages/signup-organization"
-import { Route as ResetPasswordRouteImport } from "./pages/reset-password"
-import { Route as RegisterRouteImport } from "./pages/register"
-import { Route as LoginRouteImport } from "./pages/login"
-import { Route as ForgotPasswordRouteImport } from "./pages/forgot-password"
 import { Route as R404RouteImport } from "./pages/404"
 import { Route as IndexRouteImport } from "./pages/index"
-import { Route as JoinInvitationCodeRouteImport } from "./pages/join.$invitationCode"
 
-const VerifyEmailRoute = VerifyEmailRouteImport.update({
-  id: "/verify-email",
-  path: "/verify-email",
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SignupOrganizationRoute = SignupOrganizationRouteImport.update({
-  id: "/signup-organization",
-  path: "/signup-organization",
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ResetPasswordRoute = ResetPasswordRouteImport.update({
-  id: "/reset-password",
-  path: "/reset-password",
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RegisterRoute = RegisterRouteImport.update({
-  id: "/register",
-  path: "/register",
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LoginRoute = LoginRouteImport.update({
-  id: "/login",
-  path: "/login",
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
-  id: "/forgot-password",
-  path: "/forgot-password",
-  getParentRoute: () => rootRouteImport,
-} as any)
 const R404Route = R404RouteImport.update({
   id: "/404",
   path: "/404",
@@ -59,138 +22,35 @@ const IndexRoute = IndexRouteImport.update({
   path: "/",
   getParentRoute: () => rootRouteImport,
 } as any)
-const JoinInvitationCodeRoute = JoinInvitationCodeRouteImport.update({
-  id: "/join/$invitationCode",
-  path: "/join/$invitationCode",
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   "/": typeof IndexRoute
   "/404": typeof R404Route
-  "/forgot-password": typeof ForgotPasswordRoute
-  "/login": typeof LoginRoute
-  "/register": typeof RegisterRoute
-  "/reset-password": typeof ResetPasswordRoute
-  "/signup-organization": typeof SignupOrganizationRoute
-  "/verify-email": typeof VerifyEmailRoute
-  "/join/$invitationCode": typeof JoinInvitationCodeRoute
 }
 export interface FileRoutesByTo {
   "/": typeof IndexRoute
   "/404": typeof R404Route
-  "/forgot-password": typeof ForgotPasswordRoute
-  "/login": typeof LoginRoute
-  "/register": typeof RegisterRoute
-  "/reset-password": typeof ResetPasswordRoute
-  "/signup-organization": typeof SignupOrganizationRoute
-  "/verify-email": typeof VerifyEmailRoute
-  "/join/$invitationCode": typeof JoinInvitationCodeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   "/": typeof IndexRoute
   "/404": typeof R404Route
-  "/forgot-password": typeof ForgotPasswordRoute
-  "/login": typeof LoginRoute
-  "/register": typeof RegisterRoute
-  "/reset-password": typeof ResetPasswordRoute
-  "/signup-organization": typeof SignupOrganizationRoute
-  "/verify-email": typeof VerifyEmailRoute
-  "/join/$invitationCode": typeof JoinInvitationCodeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | "/"
-    | "/404"
-    | "/forgot-password"
-    | "/login"
-    | "/register"
-    | "/reset-password"
-    | "/signup-organization"
-    | "/verify-email"
-    | "/join/$invitationCode"
+  fullPaths: "/" | "/404"
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | "/"
-    | "/404"
-    | "/forgot-password"
-    | "/login"
-    | "/register"
-    | "/reset-password"
-    | "/signup-organization"
-    | "/verify-email"
-    | "/join/$invitationCode"
-  id:
-    | "__root__"
-    | "/"
-    | "/404"
-    | "/forgot-password"
-    | "/login"
-    | "/register"
-    | "/reset-password"
-    | "/signup-organization"
-    | "/verify-email"
-    | "/join/$invitationCode"
+  to: "/" | "/404"
+  id: "__root__" | "/" | "/404"
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   R404Route: typeof R404Route
-  ForgotPasswordRoute: typeof ForgotPasswordRoute
-  LoginRoute: typeof LoginRoute
-  RegisterRoute: typeof RegisterRoute
-  ResetPasswordRoute: typeof ResetPasswordRoute
-  SignupOrganizationRoute: typeof SignupOrganizationRoute
-  VerifyEmailRoute: typeof VerifyEmailRoute
-  JoinInvitationCodeRoute: typeof JoinInvitationCodeRoute
 }
 
 declare module "@tanstack/react-router" {
   interface FileRoutesByPath {
-    "/verify-email": {
-      id: "/verify-email"
-      path: "/verify-email"
-      fullPath: "/verify-email"
-      preLoaderRoute: typeof VerifyEmailRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    "/signup-organization": {
-      id: "/signup-organization"
-      path: "/signup-organization"
-      fullPath: "/signup-organization"
-      preLoaderRoute: typeof SignupOrganizationRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    "/reset-password": {
-      id: "/reset-password"
-      path: "/reset-password"
-      fullPath: "/reset-password"
-      preLoaderRoute: typeof ResetPasswordRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    "/register": {
-      id: "/register"
-      path: "/register"
-      fullPath: "/register"
-      preLoaderRoute: typeof RegisterRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    "/login": {
-      id: "/login"
-      path: "/login"
-      fullPath: "/login"
-      preLoaderRoute: typeof LoginRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    "/forgot-password": {
-      id: "/forgot-password"
-      path: "/forgot-password"
-      fullPath: "/forgot-password"
-      preLoaderRoute: typeof ForgotPasswordRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     "/404": {
       id: "/404"
       path: "/404"
@@ -205,26 +65,12 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    "/join/$invitationCode": {
-      id: "/join/$invitationCode"
-      path: "/join/$invitationCode"
-      fullPath: "/join/$invitationCode"
-      preLoaderRoute: typeof JoinInvitationCodeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   R404Route: R404Route,
-  ForgotPasswordRoute: ForgotPasswordRoute,
-  LoginRoute: LoginRoute,
-  RegisterRoute: RegisterRoute,
-  ResetPasswordRoute: ResetPasswordRoute,
-  SignupOrganizationRoute: SignupOrganizationRoute,
-  VerifyEmailRoute: VerifyEmailRoute,
-  JoinInvitationCodeRoute: JoinInvitationCodeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

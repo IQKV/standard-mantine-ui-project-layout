@@ -1,8 +1,6 @@
 import { i18n } from "@lingui/core";
-import { t } from "@lingui/core/macro";
 import { messages } from "../../../locales/en";
 
-// Initialize immediately when this module is imported to prevent race conditions
 i18n.load("en", messages);
 i18n.activate("en");
 
@@ -10,37 +8,15 @@ export type SupportedLocales = "en" | "ru" | "it";
 
 export const availableLocales = ["en", "ru", "it"];
 
-export const localeToFlagEmojiMap: Record<SupportedLocales, string> = {
-  en: "🇬🇧",
-  ru: "🇷🇺",
-  it: "🇮🇹",
-};
-
-export const localeToNameMap: Record<SupportedLocales, string> = {
-  en: `English`,
-  ru: `Русский`,
-  it: `Italiano`,
-};
-
-export const getLocaleName = (locale: SupportedLocales) => {
-  // eslint-disable-next-line lingui/no-single-variables-to-translate,lingui/no-expression-in-message
-  return t`${localeToNameMap[locale]}`;
-};
-
 export const getClientLocale = () => {
   if (typeof window !== "undefined") {
     const storedLocale = document.cookie
       .split(";")
       .find((c) => c.includes("locale="))
       ?.split("=")[1];
-
-    if (storedLocale) {
-      return getSupportedLocale(storedLocale);
-    }
-
+    if (storedLocale) return getSupportedLocale(storedLocale);
     return getSupportedLocale(window.navigator.language);
   }
-
   return "en";
 };
 
@@ -52,22 +28,12 @@ export async function dynamicActivateLocale(locale: string) {
 }
 
 export function initializeDefaultLocale() {
-  // This is now a no-op since initialization happens at module level
-  // Kept for backward compatibility
+  // no-op — initialization happens at module level
 }
 
 export const getSupportedLocale = (userLocale: string) => {
-  const normalizedLocale = userLocale.toLowerCase();
-
-  if (availableLocales.includes(normalizedLocale)) {
-    return normalizedLocale;
-  }
-
-  const mainLanguage = normalizedLocale.split("-")[0];
-  const mainLocale = availableLocales.find((locale) => locale.startsWith(mainLanguage));
-  if (mainLocale) {
-    return mainLocale;
-  }
-
-  return "en";
+  const normalized = userLocale.toLowerCase();
+  if (availableLocales.includes(normalized)) return normalized;
+  const main = normalized.split("-")[0];
+  return availableLocales.find((l) => l.startsWith(main)) ?? "en";
 };

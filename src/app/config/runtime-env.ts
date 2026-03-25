@@ -3,20 +3,7 @@ const readRuntimeEnv = (key: string): string | undefined => {
   return (w && w[key]) ?? (import.meta as any).env?.[key];
 };
 
-const ENV_KEYS = [
-  // API base URL
-  "VITE_API_SERVER_URL",
-  // Auth domain configuration
-  "VITE_AUTH_DOMAIN_AUTH",
-  "VITE_AUTH_DOMAIN_APP",
-  // Auth redirect configuration
-  "VITE_AUTH_REDIRECT_AFTER_LOGIN",
-  "VITE_AUTH_REDIRECT_AFTER_LOGOUT",
-  "VITE_AUTH_REDIRECT_AFTER_SIGNUP",
-  // MSW configuration
-  "VITE_ENABLE_MSW",
-  "VITE_LOG_LEVEL",
-] as const;
+const ENV_KEYS = ["VITE_API_SERVER_URL", "VITE_LOG_LEVEL"] as const;
 
 export const clientBuildEnv: Record<string, string | undefined> = Object.fromEntries(
   ENV_KEYS.map((k) => [k, readRuntimeEnv(k)]),

@@ -1,6 +1,6 @@
 > ## 🤔 What is this template all about?
 >
-> - This template can be used as a base layer for a ReactJS UI projects.
+> - This template can be used as a base layer for ReactJS UI projects.
 > - Make the project easy to maintain with **7 issue templates**.
 > - Quick-start documentation with an extraordinary README structure.
 > - Manage issues with **20 issue labels**.
@@ -10,113 +10,82 @@
 
 ---
 
-# 🔐 Auth Portal - IQ Scaffold Authentication Service
-
-**Dedicated authentication portal for IQ Scaffold platform** - A standalone authentication gateway built with modern React architecture.
+# 🚀 IQScaffold Mantine UI Project Layout
 
 ## 📜 Description
 
-This auth portal serves as the **centralized authentication gateway** for the IQKV platform, handling all **unauthenticated user flows** before redirecting users to the main application.
+React + TypeScript + Vite + TanStack Router + Mantine UI Template
 
-### 🔐 Auth Portal vs App Portal Separation
-
-This portal is specifically designed for **unauthenticated users** and handles:
-
-- **User Registration** - New account creation with email verification
-- **User Login** - Initial authentication and session establishment
-- **Password Recovery** - Forgot password and reset password flows
-- **Email Verification** - Email address verification with tokens
-
-**Authenticated user operations** (change password, account settings, profile management) are handled by the main application portal at `app.iqscaffold.com`.
-
-See [AUTH_APP_SEPARATION.md](../AUTH_APP_SEPARATION.md) for detailed separation documentation.
-
-### 🎯 Features
-
-- ✅ **Sign Up** - New user registration with email verification
-- ✅ **Sign In** - User authentication with remember me
-- ✅ **Forgot Password** - Password reset request flow
-- ✅ **Reset Password** - Secure password reset with token validation
-- ✅ **Email Verification** - Email verification with token and resend capability
-- ✅ **Multi-tenant Support** - Tenant-aware authentication via X-Tenant-ID header
-- ✅ **Cookie-based Auth** - Secure HTTP-only cookie authentication
-- ✅ **RFC 7807 Error Handling** - Standardized error responses with field-level validation
-- ✅ **External Redirect** - Seamless redirect to main app after authentication
-
----
-
-## 🛠️ Technical Stack
-
-**React 19 + TypeScript + Vite 7 + TanStack Router + Mantine UI v8**
-
-> Modern, type-safe authentication portal built with Feature-Sliced Design architecture and comprehensive testing.
+> A modern, feature-rich template for building scalable React applications with the latest tools and best practices.
 
 ## 🔑 Key Features
 
 ### 🚀 **Core Technologies**
 
-- ✨ **React 19** - Latest React with concurrent features
-- ⚡ **Vite 7** - Lightning-fast development with SWC compiler
-- 🎯 **TypeScript 5.9** - Strict type safety with latest language features
-- 📦 **PNPM 10.20** - Fast, disk space efficient package manager
-- 🎨 **Mantine UI v8** - Complete component library with theming
+- ✨ **React 19** - Latest React with concurrent features and improved performance
+- ⚡ **Vite 7** - Lightning-fast development with instant HMR and optimized builds
+- 🎯 **TypeScript 5.9** - Type-safe development with strict configuration
+- � **PNPM** - Fast, disk space efficient package manager
+
+### 🎨 **UI & Styling**
+
+- 🎨 **Mantine UI 8** - Modern React components library with comprehensive theming
+- � **Mantine Notifications** - Toast notification system
+- 🪟 **Mantine Modals** - Modal manager with context
+- 🎭 **Tabler Icons** - Beautiful SVG icons optimized for React
+- 🌊 **XYFlow React** - Node-based UI / flow diagrams
+- 🎞️ **Lottie Web** - High-quality animations
 
 ### 🔄 **State Management & Data**
 
-- 🔄 **TanStack Router v1** - Type-safe file-based routing with code splitting
-- 🔄 **TanStack Query v5** - Server state management and caching
-- 🔄 **Zustand** - Lightweight client state with Immer middleware (processes layer)
-- 🔄 **Axios** - HTTP client with RFC 7807 error handling and interceptors
-- ✅ **Mantine Form + Zod** - Type-safe form validation with custom resolver
+- 🔄 **TanStack Router** - Type-safe file-based routing with code splitting and search params
+- � **TanStack Query** - Powerful data synchronization and caching
+- 🔄 **Axios** - Promise-based HTTP client for API calls
+- ✅ **React Hook Form + Zod** - Type-safe form validation and management
+- 🗃️ **Zustand** - Lightweight state management with Immer support
+- 🍪 **JS Cookie** - Simple cookie management
 - 🔗 **nuqs** - Type-safe URL search params state management
+- 🔐 **jwt-decode** - JWT token decoding
 
 ### 🌐 **Internationalization & Accessibility**
 
-- 🌍 **Lingui v5** - Modern i18n with lazy-loaded translations and macro support
-- ♿ **A11y First** - ARIA attributes, semantic HTML, and keyboard navigation
+- � **Lingui 5** - Modern i18n framework with macro support and pluralization
+- �️ **Locales: English, Russian, Italian** - PO-based catalogs with dynamic loading
+- 🍪 **Cookie-based locale detection** - Persists user language preference
 
-### 🧪 **Testing & Quality**
+### � **Testing & Quality**
 
-- 🧪 **Vitest 3** - Fast unit testing with coverage (v8) and UI mode
-- 🧪 **Playwright 1.56** - E2E testing with auto-start dev server
-- 🧪 **Testing Library** - React Testing Library for component tests
-- 🧪 **MSW 2** - Mock Service Worker for API mocking in dev/test
-- 🧪 **Co-located Tests** - Tests alongside source files following FSD architecture
-- 🧪 **Architecture Tests** - Automated FSD compliance verification
+- 🧪 **Vitest** - Fast unit testing with coverage reports and UI
+- 🧪 **Playwright** - Reliable end-to-end testing (Chromium, Firefox, WebKit)
+- 🧪 **Mock Service Worker** - Client-agnostic API mocking for development and testing
+- 🧪 **Testing Library** - Simple and complete testing utilities for React
+- 🏗️ **Architecture tests** - FSD boundary enforcement via `src/architecture.test.ts`
 
-### 🔍 **Code Quality & Development**
+### � **Code Quality & Development**
 
-- 🔍 **oxlint** - modern linting with TypeScript, React
-- 💅 **oxfmt** - Code formatting
-- 🎨 **Stylelint 16** - CSS/SCSS linting with standard-scss config
+- 🔍 **OxLint** - Ultra-fast linting with type-aware rules
+- � **OxFmt** - Fast opinionatted code formatting
+- � **Stylelint** - CSS linting for consistent styling
 - 🪝 **Husky** - Git hooks for pre-commit validation
-- 📝 **Commitlint** - Conventional commit enforcement
-- 🔪 **Knip 5** - Dead code elimination and unused dependency detection
-
-### 🧱 **Development Tools**
-
-- 🔧 **SWC** - Fast TypeScript/JavaScript compiler via @vitejs/plugin-react-swc
-- 📦 **Bundle Visualizer** - Analyze and optimize bundle size
-- 🧹 **Console Remover** - Strip console statements in production
-- 🔧 **TanStack Router Plugin** - File-based routing with type generation
+- 📝 **Commitlint** - Conventional commit message validation
+- 🔪 **Knip** - Dead code elimination and dependency analysis
 
 ### 🚀 **DevOps & Automation**
 
-- 👷 **GitHub Actions** - CI workflows for build, test, and quality checks
-- 🔒 **Dependabot** - Automated dependency updates with auto-approve
-- 📦 **Release-it** - Automated versioning with conventional changelog
-- 🐳 **Docker Compose** - Dev container with multi-stage builds
-- 📊 **SonarQube** - Code quality analysis (sonar-project.properties)
+- 👷 **GitHub Actions** - CI/CD workflows for build, test, and PR validation
+- 🔒 **Dependabot** - Automated dependency updates and security monitoring
+- � **Release-it** - Automated versioning and changelog generation
+- � **Docker Compose** - Local SonarQube instance for code quality analysis
+- 📊 **SonarQube** - Code quality and security analysis
 
 ### 🏗️ **Architecture & Patterns**
 
-- 🏗️ **Feature-Sliced Design** - Enforced layer boundaries with automated tests
-- 🏗️ **Processes Layer** - Cross-feature concerns (auth, tenant management)
-- 🎯 **TypeScript Strict Mode** - Maximum type safety with strict configuration
-- 🔄 **Public API Pattern** - All slices export through index.ts (enforced by tests)
-- 🔄 **Co-located Tests** - Tests alongside source files for maintainability
+- 🏗️ **Feature-Sliced Design** - Scalable frontend architecture methodology
+- ⚙️ **Runtime Config** - `public/config.js` overrides build-time env vars at runtime
+- 🎯 **TypeScript Strict Mode** - Enhanced type safety with strict configuration
+- 🔄 **Hot Module Replacement** - Instant updates during development
 
-## 📚 Documentation
+## � Documentation
 
 > [!TIP]
 >
@@ -125,8 +94,8 @@ See [AUTH_APP_SEPARATION.md](../AUTH_APP_SEPARATION.md) for detailed separation 
 > - [Node LTS version](https://nodejs.org/en/blog/release/v22.15.0/)
 > - [pnpm](https://pnpm.io/installation)
 > - [Git](https://git-scm.com/)
-> - [Docker](https://www.docker.com/get-started/)
-> - [Docker Compose](https://docs.docker.com/compose/)
+> - [Docker](https://www.docker.com/get-started/) _(optional, for SonarQube)_
+> - [Docker Compose](https://docs.docker.com/compose/) _(optional)_
 
 ### 🔺 Using This Template
 
@@ -139,7 +108,7 @@ See [AUTH_APP_SEPARATION.md](../AUTH_APP_SEPARATION.md) for detailed separation 
 
 #### Option 2: Clone Directly
 
-```shell script
+```shell
 # Clone the repository
 git clone https://github.com/IQKV/iqscaffold-ui-mantine-auth-portal.git my-app
 
@@ -150,19 +119,19 @@ cd my-app
 rm -rf .git
 git init
 git add .
-git commit -m "feat: initial commit"
+git commit -m "Initial commit from template"
 ```
 
 ### 🔺 Local Development Setup
 
-```shell script
+```shell
 # Install dependencies
 pnpm install
 
 # Copy environment variables
 cp .env.example .env
 
-# Start local dev services in Docker (optional)
+# (Optional) Start local SonarQube in Docker
 docker compose -f compose.yaml up -d
 
 # Start development server
@@ -170,6 +139,17 @@ pnpm dev
 ```
 
 The application will be available at `http://localhost:5173`
+
+### ⚙️ Runtime Configuration
+
+This project supports overriding build-time env vars at runtime via `public/config.js`. Useful for containerized deployments where you don't want to rebuild per environment.
+
+```shell
+cp public/config.js.example public/config.js
+# Edit public/config.js with your environment values
+```
+
+`public/config.js` is loaded before the app bundle and sets values on `window.*`, which take precedence over `VITE_*` build-time variables. Do **not** commit secrets here.
 
 ### 🎨 Template Customization
 
@@ -192,215 +172,128 @@ After creating your project from this template, you'll want to customize it:
 #### 3. Configure Environment
 
 - [ ] Update `.env.example` with your API endpoints
-- [ ] Configure `src/shared/lib/client.ts` with your API base URL and update values in `src/app/config`
-- [ ] Set up authentication endpoints in API clients
+- [ ] Set `VITE_API_SERVER_URL` to your backend base URL
+- [ ] Add extra env keys to `src/app/config/runtime-env.ts` if needed
+- [ ] Set up API clients under `src/shared/api/`
+
+#### 4. Configure i18n
+
+- [ ] Add or remove locales in `lingui.config.ts`
+- [ ] Run `pnpm messages:extract` after adding new translatable strings
+- [ ] Translate strings in `locales/*.po` files
+- [ ] Run `pnpm messages:compile` to compile catalogs
+
+#### 5. Set Up CI/CD
+
+- [ ] Configure GitHub Actions secrets for deployment
+- [ ] Update SonarQube configuration in `sonar-project.properties`
+- [ ] Set up deployment targets in GitHub Actions workflows
 
 ### 📃 Available Scripts
 
-| Command                   | Description                                     |
-| ------------------------- | ----------------------------------------------- |
-| `pnpm dev`                | Start development server (port 5173)            |
-| `pnpm build`              | Build for production (with i18n compilation)    |
-| `pnpm preview`            | Preview production build                        |
-| `pnpm test`               | Run unit tests with Vitest                      |
-| `pnpm test:arch`          | Run FSD architecture compliance tests           |
-| `pnpm test:ui`            | Run tests with UI interface                     |
-| `pnpm test:coverage`      | Run tests with coverage report (v8)             |
-| `pnpm e2e`                | Run E2E tests with Playwright (Chromium)        |
-| `pnpm e2e:ui`             | Run E2E tests with Playwright UI mode           |
-| `pnpm e2e:headed`         | Run E2E tests in headed mode                    |
-| `pnpm e2e:debug`          | Debug E2E tests with PWDEBUG                    |
-| `pnpm e2e:report`         | Open last Playwright HTML report                |
-| `pnpm e2e:all-browsers`   | Run E2E tests on Chromium, Firefox, and WebKit  |
-| `pnpm playwright:install` | Install Playwright browsers with dependencies   |
-| `pnpm lint`               | Lint code with oxlint                           |
-| `pnpm lint:fix`           | Fix linting issues automatically                |
-| `pnpm lint:stylelint`     | Lint CSS/SCSS files                             |
-| `pnpm formatter:check`    | Check code formatting                           |
-| `pnpm formatter:write`    | Format code with oxfmt                          |
-| `pnpm type-check`         | Check TypeScript types (no emit)                |
-| `pnpm messages:extract`   | Extract i18n messages from source               |
-| `pnpm messages:compile`   | Compile i18n messages for production            |
-| `pnpm knip`               | Find unused files, dependencies, and exports    |
-| `pnpm release`            | Automated versioning and changelog (release-it) |
-| `pnpm ci`                 | Run CI checks (lint + test)                     |
+| Command                   | Description                                       |
+| ------------------------- | ------------------------------------------------- |
+| `pnpm dev`                | Start development server                          |
+| `pnpm build`              | Build for production (includes i18n compile)      |
+| `pnpm preview`            | Preview production build                          |
+| `pnpm test`               | Run unit tests with Vitest                        |
+| `pnpm test:ui`            | Run tests with UI interface                       |
+| `pnpm test:coverage`      | Run tests with coverage report                    |
+| `pnpm test:arch`          | Run FSD architecture boundary tests               |
+| `pnpm e2e`                | Run end-to-end tests with Playwright              |
+| `pnpm e2e:ui`             | Run e2e tests with UI interface                   |
+| `pnpm e2e:headed`         | Run e2e tests in headed mode                      |
+| `pnpm e2e:smoke`          | Run smoke tests on Chromium                       |
+| `pnpm e2e:auth`           | Run auth-specific e2e tests                       |
+| `pnpm e2e:chrome`         | Run e2e tests on Chromium only                    |
+| `pnpm e2e:firefox`        | Run e2e tests on Firefox only                     |
+| `pnpm e2e:webkit`         | Run e2e tests on WebKit only                      |
+| `pnpm e2e:all-browsers`   | Run e2e tests on all browsers                     |
+| `pnpm e2e:report`         | Open last Playwright HTML report                  |
+| `pnpm e2e:update`         | Update Playwright snapshots                       |
+| `pnpm e2e:debug`          | Debug e2e tests (PWDEBUG)                         |
+| `pnpm playwright:install` | Install Playwright browsers                       |
+| `pnpm lint`               | Lint code with OxLint (type-aware)                |
+| `pnpm lint:fix`           | Fix linting issues and format automatically       |
+| `pnpm lint:stylelint`     | Lint CSS files with Stylelint                     |
+| `pnpm formatter:check`    | Check code formatting with OxFmt                  |
+| `pnpm formatter:write`    | Format code with OxFmt                            |
+| `pnpm type-check`         | Check TypeScript types                            |
+| `pnpm messages:extract`   | Extract i18n messages from source                 |
+| `pnpm messages:compile`   | Compile i18n PO catalogs to TypeScript            |
+| `pnpm knip`               | Detect unused exports and dependencies            |
+| `pnpm cleanup`            | Remove dist, .tanstack, coverage, stylelint cache |
+| `pnpm cleanup:all`        | Full cleanup including node_modules               |
+| `pnpm release`            | Automate versioning and changelog generation      |
 
 ### 🏗️ **Feature-Sliced Design Architecture**
 
-This project follows **Feature-Sliced Design (FSD)** methodology with **automated architecture tests** that enforce:
-
-- ✅ Layer structure (app, processes, pages, widgets, features, entities, shared)
-- ✅ Public API exports (all slices must have index.ts)
-- ✅ Required segments (features must have ui/ and model/)
-- ✅ Naming conventions (kebab-case for pages and shared UI)
-
-**Run architecture tests:** `pnpm test:arch`
+This project follows **Feature-Sliced Design (FSD)** methodology for scalable frontend architecture.
 
 ```
 src/
-├── app/          # Application layer (providers, routing, config)
-├── processes/    # Process layer (auth, tenant - cross-feature concerns)
-├── pages/        # Page layer (route components: login, register, forgot-password, reset-password, verify-email)
-├── widgets/      # Widget layer (auth-layout, tenant-info, theme-toggle)
-├── features/     # Feature layer (signin-form, signup-form, forgot-password-form, reset-password-form, verify-email)
-├── entities/     # Entity layer (form entity)
-├── shared/       # Shared layer (ui, lib, api, types, locales, mocks)
-└── architecture.test.ts  # Automated FSD compliance tests
+├── app/            # App initialization, providers, router, theme, config
+│   └── config/     # Runtime env config (VITE_* + window.* override)
+├── processes/      # Cross-feature flows (e.g. auth session, logout)
+├── pages/          # Route components (__root, index, 404)
+├── widgets/        # Composite UI blocks assembled from features/entities
+├── features/       # User interactions and business logic (forms, actions)
+├── entities/       # Business entities and their pure API methods
+├── shared/         # Reusable utilities, UI kit, API clients, mocks, types
+│   ├── api/        # Axios/fetch clients and base API setup
+│   ├── lib/        # Utility functions and helpers
+│   ├── locales/    # i18n initialization and locale detection
+│   ├── mocks/      # MSW handlers for development and testing
+│   ├── types/      # Shared TypeScript types
+│   └── ui/         # Shared UI components (AppLayout, LoadingOverlay, ErrorBoundary)
+└── types/          # Global type declarations (locales, reset)
 ```
+
+### 📚 **Architecture Documentation**
+
+- 📚 [**API Documentation**](docs/api/README.md)
+- 📖 [**Architecture Overview**](docs/architecture/README.md)
+- 🚀 [**Deployment Guide**](docs/deployment/README.md)
+- 🙏 [**Contributing Guidelines**](.github/CONTRIBUTING.md)
 
 ### Environment Variables
 
-| Variable                          | Description                                   | Default                       | Required |
-| --------------------------------- | --------------------------------------------- | ----------------------------- | -------- |
-| `VITE_API_SERVER_URL`             | Backend API base URL (user service)           | `http://localhost:8080`       | Yes      |
-| `VITE_AUTH_DOMAIN_AUTH`           | Auth portal domain                            | `https://auth.iqscaffold.com` | Yes      |
-| `VITE_AUTH_DOMAIN_APP`            | Main application domain                       | `https://app.iqscaffold.com`  | Yes      |
-| `VITE_AUTH_REDIRECT_AFTER_LOGIN`  | Redirect URL after successful login           | `VITE_AUTH_DOMAIN_APP`        | No       |
-| `VITE_AUTH_REDIRECT_AFTER_LOGOUT` | Redirect URL after logout                     | `{AUTH_DOMAIN}/login`         | No       |
-| `VITE_AUTH_REDIRECT_AFTER_SIGNUP` | Redirect URL after signup                     | `{AUTH_DOMAIN}/login`         | No       |
-| `VITE_ENABLE_MSW`                 | Enable Mock Service Worker for API mocking    | `true`                        | No       |
-| `VITE_LOG_LEVEL`                  | Console logging verbosity (silent/info/debug) | `info`                        | No       |
-| `TZ`                              | Defines timezone                              | `UTC`                         | No       |
-| `NODE_ENV`                        | Defines nodejs environment                    | `development`                 | No       |
+| Variable              | Description                          | Default                     |
+| --------------------- | ------------------------------------ | --------------------------- |
+| `VITE_API_SERVER_URL` | Backend API base URL                 | `http://localhost:8080/api` |
+| `VITE_LOG_LEVEL`      | Log level: `silent`, `info`, `debug` | `info`                      |
 
-#### API Integration
-
-The auth portal connects to backend services via `VITE_API_SERVER_URL` with:
-
-- **Cookie-based Authentication** - HTTP-only cookies with `withCredentials: true`
-- **Multi-tenant Support** - Automatic `X-Tenant-ID` header injection
-- **RFC 7807 Error Handling** - Standardized Problem Details format
-- **Field-level Validation** - Backend validation errors mapped to form fields
-- **Global Error Notifications** - Automatic error notifications for server errors
-
-**Expected Backend Endpoints (Unauthenticated Flows Only):**
-
-- `POST /v1/auth/signup` - User registration
-- `POST /v1/auth/login` - User authentication
-- `POST /v1/auth/refresh` - Refresh access token
-- `POST /v1/auth/logout` - User logout
-- `POST /v1/auth/password/forgot` - Password reset request
-- `POST /v1/auth/password/reset` - Password reset with token
-- `HEAD /v1/auth/password/reset` - Validate password reset token
-- `POST /v1/auth/email/verify` - Verify email with token
-- `POST /v1/auth/email/resend` - Resend verification email
-- `POST /v1/auth/validate` - Validate JWT token
-
-> **Note:** Authenticated user operations (change password, logout all devices, email status) are handled by the main app portal at `app.iqscaffold.com`.
-
-**Error Response Format (RFC 7807):**
-
-```json
-{
-  "type": "validation-error",
-  "title": "Validation Failed",
-  "status": 400,
-  "detail": "One or more fields are invalid",
-  "fields": [
-    {
-      "field": "email",
-      "message": "Email is already registered",
-      "rejectedValue": "user@example.com"
-    }
-  ],
-  "correlationId": "abc-123",
-  "requestId": "req-456"
-}
-```
+> Variables can be overridden at runtime via `public/config.js` without rebuilding. See [Runtime Configuration](#️-runtime-configuration).
 
 ---
 
-## 🧪 Testing Strategy
+## 🧪 E2E Testing (Playwright)
 
-### Unit Tests (Vitest 3)
+- Install browsers (first time): `pnpm playwright:install`
+- Run tests: `pnpm e2e`
+- UI mode: `pnpm e2e:ui`
+- Headed: `pnpm e2e:headed`
+- Smoke only: `pnpm e2e:smoke`
+- Report: `pnpm e2e:report`
 
-Unit tests are **co-located with source files** following FSD architecture:
+Locally runs Chromium only by default. Firefox and WebKit are added in CI or when `ALL_BROWSERS=true`.
+The dev server is auto-started by Playwright via `webServer` in `playwright.config.ts`.
+CI runs Playwright on PRs/pushes via `.github/workflows/build-nodejs-project.yml`.
 
+## 🌍 Internationalization
+
+Supported locales: **English** (`en`), **Russian** (`ru`), **Italian** (`it`).
+
+Locale is detected from a `locale` cookie, then browser language, falling back to `en`.
+Catalogs live in `locales/*.po` and are compiled to `locales/*.ts` via Lingui.
+
+```shell
+# After adding new Trans/t`` usages in source:
+pnpm messages:extract
+
+# After editing .po translation files:
+pnpm messages:compile
 ```
-src/
-├── features/
-│   └── signin-form/
-│       ├── ui/
-│       │   ├── signin-form-feature.tsx
-│       │   └── signin-form-feature.test.tsx  ← Co-located test
-│       └── model/
-│           ├── validation.ts
-│           └── validation.test.ts  ← Co-located test
-├── shared/
-│   └── ui/
-│       └── form-field/
-│           ├── form-field.tsx
-│           └── form-field.test.tsx  ← Co-located test
-```
-
-**Test Configuration:**
-
-- **Test Runner:** Vitest 3 with happy-dom environment
-- **Testing Library:** @testing-library/react v16 + user-event v14
-- **Coverage:** v8 provider with HTML/text reporters
-- **Setup:** `src/setupTests.ts` with Mantine mocks
-
-**Running Tests:**
-
-```bash
-pnpm test              # Run all unit tests
-pnpm test:arch         # Run FSD architecture tests
-pnpm test:ui           # Run with Vitest UI
-pnpm test:coverage     # Generate coverage report
-```
-
-### E2E Testing (Playwright 1.56)
-
-**Configuration:**
-
-- **Auto-start Dev Server:** Configured in `playwright.config.ts`
-- **Browsers:** Chromium (default), Firefox, WebKit (CI or ALL_BROWSERS=true)
-- **Parallel Execution:** Enabled locally, sequential in CI
-- **Retries:** 1 retry locally, 2 in CI
-- **Artifacts:** Screenshots, videos, traces on failure
-
-**Running E2E Tests:**
-
-```bash
-pnpm playwright:install  # First time: install browsers
-pnpm e2e                 # Run tests (Chromium only)
-pnpm e2e:ui              # Interactive UI mode
-pnpm e2e:headed          # Watch tests run
-pnpm e2e:debug           # Debug with Playwright Inspector
-pnpm e2e:report          # View HTML report
-pnpm e2e:all-browsers    # Test on all browsers
-```
-
-**Test Organization:**
-
-```
-e2e/
-├── setup/
-│   └── global-setup.ts
-├── auth/
-│   ├── login.spec.ts
-│   ├── signup.spec.ts
-│   └── password-reset.spec.ts
-└── smoke/
-    └── homepage.spec.ts
-```
-
-### Architecture Tests
-
-**Automated FSD compliance verification:**
-
-```bash
-pnpm test:arch
-```
-
-**What's Tested:**
-
-- ✅ All FSD layers exist (app, processes, pages, widgets, features, entities, shared)
-- ✅ All slices have public API (index.ts)
-- ✅ Features have required segments (ui/, model/)
-- ✅ Widgets have ui/ or component file
-- ✅ Shared segments have index.ts
-- ✅ Naming conventions (kebab-case for pages and shared UI)
 
 ## 📆 Changelog
 
@@ -419,3 +312,33 @@ Please follow [Code of Conduct](.github/CODE_OF_CONDUCT.md) page.
 ## 📑 License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+---
+
+## _GitHub Project Tooling Overview_
+
+A concise summary of automation and quality tooling. For full details, see the docs folder.
+
+### CI/CD (GitHub Actions)
+
+- `.github/workflows/build-nodejs-project.yml` – build & test pipeline
+- `.github/workflows/check-pr-title.yml` – PR naming conventions
+- `.github/workflows/check-commit-message.yml` – commit message validation
+- `.github/workflows/auto-approve-dependabot-pr.yml` – auto-approve Dependabot PRs
+- `.github/workflows/use-template.yml` – one-time template setup
+
+### Local Automation (Husky)
+
+- `.husky/pre-commit` – triggers lint-staged checks
+- `.husky/commit-msg` – runs commitlint
+- `commitlint.config.js` – enforces conventional commit messages
+
+### Quality Gates
+
+- OxLint – type-aware linting via `pnpm lint`
+- OxFmt – formatting via `pnpm formatter:check`
+- Stylelint – CSS linting via `pnpm lint:stylelint`
+- TypeScript – `pnpm type-check`
+- Architecture – `pnpm test:arch`
+
+See the Available Scripts section above for everyday commands.

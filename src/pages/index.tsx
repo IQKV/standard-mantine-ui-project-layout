@@ -1,7 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SignInFormFeature } from "@/features/signin-form";
-import { AuthLayout } from "@/widgets";
-import { t } from "@lingui/core/macro";
+import { Container, Title, Text, Stack } from "@mantine/core";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -9,8 +7,11 @@ export const Route = createFileRoute("/")({
 
 function HomePage() {
   return (
-    <AuthLayout title={t`Welcome to IQ Scaffold`} subtitle={t`Sign in to your account to continue`}>
-      <SignInFormFeature _useExternalRedirect />
-    </AuthLayout>
+    <Container size="sm" py="xl">
+      <Stack align="center" gap="md">
+        <Title>Welcome</Title>
+        <Text c="dimmed">Your app starts here.</Text>
+      </Stack>
+    </Container>
   );
 }
