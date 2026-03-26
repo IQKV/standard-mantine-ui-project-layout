@@ -6,7 +6,7 @@
 > - Manage issues with **20 issue labels**.
 > - Make _community healthier_ with all the guides like code of conduct, contributing, support, security...
 > - Learn more with the [official GitHub guide on creating repositories from a template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template).
-> - To start using it, click **[Use this template](https://github.com/IQKV/iqscaffold-ui-mantine-auth-portal/generate)** to create your new repository.
+> - To start using it, click **[Use this template](https://github.com/IQKV/standard-mantine-ui-project-layout/generate)** to create your new repository.
 
 ---
 
@@ -22,68 +22,68 @@ React + TypeScript + Vite + TanStack Router + Mantine UI Template
 
 ### 🚀 **Core Technologies**
 
-- ✨ **React 19** - Latest React with concurrent features and improved performance
-- ⚡ **Vite 7** - Lightning-fast development with instant HMR and optimized builds
-- 🎯 **TypeScript 5.9** - Type-safe development with strict configuration
-- � **PNPM** - Fast, disk space efficient package manager
+- **React 19** - Latest React with concurrent features and improved performance
+- **Vite 7** - Lightning-fast development with instant HMR and optimized builds
+- **TypeScript 5.9** - Type-safe development with strict configuration
+- **PNPM** - Fast, disk space efficient package manager
 
 ### 🎨 **UI & Styling**
 
-- 🎨 **Mantine UI 8** - Modern React components library with comprehensive theming
-- � **Mantine Notifications** - Toast notification system
-- 🪟 **Mantine Modals** - Modal manager with context
-- 🎭 **Tabler Icons** - Beautiful SVG icons optimized for React
-- 🌊 **XYFlow React** - Node-based UI / flow diagrams
-- 🎞️ **Lottie Web** - High-quality animations
+- **Mantine UI 8** - Modern React components library with comprehensive theming
+- **Mantine Notifications** - Toast notification system
+- **Mantine Modals** - Modal manager with context
+- **Tabler Icons** - Beautiful SVG icons optimized for React
+- **XYFlow React** - Node-based UI / flow diagrams
+-️ **Lottie Web** - High-quality animations
 
 ### 🔄 **State Management & Data**
 
-- 🔄 **TanStack Router** - Type-safe file-based routing with code splitting and search params
-- � **TanStack Query** - Powerful data synchronization and caching
-- 🔄 **Axios** - Promise-based HTTP client for API calls
-- ✅ **React Hook Form + Zod** - Type-safe form validation and management
-- 🗃️ **Zustand** - Lightweight state management with Immer support
-- 🍪 **JS Cookie** - Simple cookie management
-- 🔗 **nuqs** - Type-safe URL search params state management
-- 🔐 **jwt-decode** - JWT token decoding
+- **TanStack Router** - Type-safe file-based routing with code splitting and search params
+- **TanStack Query** - Powerful data synchronization and caching
+- **Axios** - Promise-based HTTP client for API calls
+- **React Hook Form + Zod** - Type-safe form validation and management
+-️ **Zustand** - Lightweight state management with Immer support
+- **JS Cookie** - Simple cookie management
+- **nuqs** - Type-safe URL search params state management
+- **jwt-decode** - JWT token decoding
 
 ### 🌐 **Internationalization & Accessibility**
 
-- � **Lingui 5** - Modern i18n framework with macro support and pluralization
-- �️ **Locales: English, Russian, Italian** - PO-based catalogs with dynamic loading
-- 🍪 **Cookie-based locale detection** - Persists user language preference
+- **Lingui 5** - Modern i18n framework with macro support and pluralization
+-️ **Locales: English, Russian, Italian** - PO-based catalogs with dynamic loading
+- **Cookie-based locale detection** - Persists user language preference
 
-### � **Testing & Quality**
+### 🧪 **Testing & Quality**
 
-- 🧪 **Vitest** - Fast unit testing with coverage reports and UI
-- 🧪 **Playwright** - Reliable end-to-end testing (Chromium, Firefox, WebKit)
-- 🧪 **Mock Service Worker** - Client-agnostic API mocking for development and testing
-- 🧪 **Testing Library** - Simple and complete testing utilities for React
-- 🏗️ **Architecture tests** - FSD boundary enforcement via `src/architecture.test.ts`
+- **Vitest** - Fast unit testing with coverage reports and UI
+- **Playwright** - Reliable end-to-end testing (Chromium, Firefox, WebKit)
+- **Mock Service Worker** - Client-agnostic API mocking for development and testing
+- **Testing Library** - Simple and complete testing utilities for React
+- **Architecture tests** - FSD boundary enforcement via `src/architecture.test.ts`
 
-### � **Code Quality & Development**
+### 🔍 **Code Quality & Development**
 
-- 🔍 **OxLint** - Ultra-fast linting with type-aware rules
-- � **OxFmt** - Fast opinionatted code formatting
-- � **Stylelint** - CSS linting for consistent styling
-- 🪝 **Husky** - Git hooks for pre-commit validation
-- 📝 **Commitlint** - Conventional commit message validation
-- 🔪 **Knip** - Dead code elimination and dependency analysis
+- **OxLint** - Ultra-fast linting with type-aware rules
+- **OxFmt** - Fast opinionatted code formatting
+- **Stylelint** - CSS linting for consistent styling
+- **Husky** - Git hooks for pre-commit validation
+- **Commitlint** - Conventional commit message validation
+- **Knip** - Dead code elimination and dependency analysis
 
-### 🚀 **DevOps & Automation**
+### 👷 **DevOps & Automation**
 
-- 👷 **GitHub Actions** - CI/CD workflows for build, test, and PR validation
-- 🔒 **Dependabot** - Automated dependency updates and security monitoring
-- � **Release-it** - Automated versioning and changelog generation
-- � **Docker Compose** - Local SonarQube instance for code quality analysis
-- 📊 **SonarQube** - Code quality and security analysis
+- **GitHub Actions** - CI/CD workflows for build, test, and PR validation
+- **Dependabot** - Automated dependency updates and security monitoring
+- **Release-it** - Automated versioning and changelog generation
+- **Docker Compose** - Local SonarQube instance for code quality analysis
+- **SonarQube** - Code quality and security analysis
 
 ### 🏗️ **Architecture & Patterns**
 
-- 🏗️ **Feature-Sliced Design** - Scalable frontend architecture methodology
-- ⚙️ **Runtime Config** - `public/config.js` overrides build-time env vars at runtime
-- 🎯 **TypeScript Strict Mode** - Enhanced type safety with strict configuration
-- 🔄 **Hot Module Replacement** - Instant updates during development
+- **Feature-Sliced Design** - Scalable frontend architecture methodology
+- **Runtime Config** - `public/config.js` overrides build-time env vars at runtime
+- **TypeScript Strict Mode** - Enhanced type safety with strict configuration
+- **Hot Module Replacement** - Instant updates during development
 
 ## � Documentation
 
@@ -101,7 +101,7 @@ React + TypeScript + Vite + TanStack Router + Mantine UI Template
 
 #### Option 1: Use GitHub Template (Recommended)
 
-1. Click **[Use this template](https://github.com/IQKV/iqscaffold-ui-mantine-auth-portal/generate)** button
+1. Click **[Use this template](https://github.com/IQKV/standard-mantine-ui-project-layout/generate)** button
 2. Create your new repository
 3. Clone your new repository
 4. Follow the setup steps below
@@ -110,7 +110,7 @@ React + TypeScript + Vite + TanStack Router + Mantine UI Template
 
 ```shell
 # Clone the repository
-git clone https://github.com/IQKV/iqscaffold-ui-mantine-auth-portal.git my-app
+git clone https://github.com/IQKV/standard-mantine-ui-project-layout.git my-app
 
 # Navigate to project directory
 cd my-app
@@ -119,7 +119,7 @@ cd my-app
 rm -rf .git
 git init
 git add .
-git commit -m "Initial commit from template"
+git commit -m "feat: initial commit from template"
 ```
 
 ### 🔺 Local Development Setup
