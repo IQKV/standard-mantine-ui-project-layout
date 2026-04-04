@@ -34,7 +34,7 @@ React + TypeScript + Vite + TanStack Router + Mantine UI Template
 - **Mantine Modals** - Modal manager with context
 - **Tabler Icons** - Beautiful SVG icons optimized for React
 - **XYFlow React** - Node-based UI / flow diagrams
--️ **Lottie Web** - High-quality animations
+  -️ **Lottie Web** - High-quality animations
 
 ### 🔄 **State Management & Data**
 
@@ -42,7 +42,7 @@ React + TypeScript + Vite + TanStack Router + Mantine UI Template
 - **TanStack Query** - Powerful data synchronization and caching
 - **Axios** - Promise-based HTTP client for API calls
 - **React Hook Form + Zod** - Type-safe form validation and management
--️ **Zustand** - Lightweight state management with Immer support
+  -️ **Zustand** - Lightweight state management with Immer support
 - **JS Cookie** - Simple cookie management
 - **nuqs** - Type-safe URL search params state management
 - **jwt-decode** - JWT token decoding
@@ -50,7 +50,7 @@ React + TypeScript + Vite + TanStack Router + Mantine UI Template
 ### 🌐 **Internationalization & Accessibility**
 
 - **Lingui 5** - Modern i18n framework with macro support and pluralization
--️ **Locales: English, Russian, Italian** - PO-based catalogs with dynamic loading
+  -️ **Locales: English, Russian, Italian** - PO-based catalogs with dynamic loading
 - **Cookie-based locale detection** - Persists user language preference
 
 ### 🧪 **Testing & Quality**
