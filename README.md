@@ -23,7 +23,7 @@ React + TypeScript + Vite + TanStack Router + Mantine UI Template
 ### 🚀 **Core Technologies**
 
 - **React 19** - Latest React with concurrent features and improved performance
-- **Vite 7** - Lightning-fast development with instant HMR and optimized builds
+- **Vite 8** - Lightning-fast development with instant HMR and optimized builds
 - **TypeScript 5.9** - Type-safe development with strict configuration
 - **PNPM** - Fast, disk space efficient package manager
 
