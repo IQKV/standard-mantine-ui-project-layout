@@ -183,8 +183,8 @@ importers:
         specifier: ^5.6.0
         version: 5.6.0(react@19.2.4)
       react-infinite-scroll-component:
-        specifier: ^7.0.1
-        version: 7.0.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: ^7.1.0
+        version: 7.1.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       react-lottie:
         specifier: ^1.2.10
         version: 1.2.10(react@19.2.4)
@@ -5741,9 +5741,9 @@ packages:
     peerDependencies:
       react: '*'
 
-  react-infinite-scroll-component@7.0.1:
-    resolution: {integrity: sha512-MB3JiV+83/VTrojaxcZuO/u9pnxrLO/ZeX4g1zc1kcj9Hdgz43mMCZ9R9QjvSqdhmS9aquABx4PFEhvAVmbVag==}
-    engines: {node: '>=18.18.0'}
+  react-infinite-scroll-component@7.1.0:
+    resolution: {integrity: sha512-EPUMyOnpmJDqI1aoUi9uR/TSUfJCUN77ZkpzYSshGwrC2NTaH6p+rxaP/2DZJWygOZmZcAieZk4VciF8q9H/tw==}
+    engines: {node: '>=20.0.0'}
     peerDependencies:
       react: '>=17.0.0'
       react-dom: '>=17.0.0'
@@ -6301,10 +6301,6 @@ packages:
 
   threads@1.7.0:
     resolution: {integrity: sha512-Mx5NBSHX3sQYR6iI9VYbgHKBLisyB+xROCBGjjWm1O9wb9vfLxdaGtmT/KCjUqMsSNW6nERzCW3T6H43LqjDZQ==}
-
-  throttle-debounce@2.3.0:
-    resolution: {integrity: sha512-H7oLPV0P7+jgvrk+6mwwwBDmxTaxnu9HMXmloNLXwnNO0ZxZ31Orah2n8lU1eMPvsaowP2CX+USCgyovXfdOFQ==}
-    engines: {node: '>=8'}
 
   through@2.3.8:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
@@ -12109,11 +12105,10 @@ snapshots:
     dependencies:
       react: 19.2.4
 
-  react-infinite-scroll-component@7.0.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
+  react-infinite-scroll-component@7.1.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
     dependencies:
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
-      throttle-debounce: 2.3.0
 
   react-is@16.13.1: {}
 
@@ -12738,8 +12733,6 @@ snapshots:
       tiny-worker: 2.3.0
     transitivePeerDependencies:
       - supports-color
-
-  throttle-debounce@2.3.0: {}
 
   through@2.3.8: {}
 
