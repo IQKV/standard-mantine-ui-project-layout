@@ -4,8 +4,6 @@ import { formatter } from "@lingui/format-po";
 const config: LinguiConfig = {
   locales: [
     "en", // English
-    "ru", // Russian
-    "it", // Italian
   ],
   catalogs: [
     {
