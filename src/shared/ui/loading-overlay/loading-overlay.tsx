@@ -1,25 +1,39 @@
-import { Center, Loader, Overlay, Stack, Text } from "@mantine/core";
+import { Center, Loader, LoadingOverlay as MantineLoadingOverlay, Stack, Text } from "@mantine/core";
 
 interface LoadingOverlayProps {
   visible: boolean;
   message?: string;
+  zIndex?: number;
 }
 
-export function LoadingOverlay({ visible, message = "Loading..." }: LoadingOverlayProps) {
+export function LoadingOverlay({
+  visible,
+  message = "Loading...",
+  zIndex = 1000,
+}: LoadingOverlayProps) {
   if (!visible) {
     return null;
   }
 
   return (
-    <Overlay>
-      <Center h="100vh">
-        <Stack align="center" gap="md">
-          <Loader size="lg" />
-          <Text size="lg" fw={500}>
-            {message}
-          </Text>
-        </Stack>
-      </Center>
-    </Overlay>
+    <MantineLoadingOverlay
+      visible={visible}
+      zIndex={zIndex}
+      overlayProps={{ blur: 2 }}
+      loaderProps={{
+        children: (
+          <Center>
+            <Stack align="center" gap="md">
+              <Loader size="lg" />
+              {message && (
+                <Text size="sm" c="dimmed">
+                  {message}
+                </Text>
+              )}
+            </Stack>
+          </Center>
+        ),
+      }}
+    />
   );
 }

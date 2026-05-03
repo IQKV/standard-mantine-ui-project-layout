@@ -1,8 +1,9 @@
-import { StrictMode, useEffect } from "react";
+import { StrictMode, useEffect, useState } from "react";
 
 import { MantineProvider } from "@mantine/core";
 import { Notifications } from "@mantine/notifications";
 import { ModalsProvider } from "@mantine/modals";
+import { NavigationProgress, nprogress } from "@mantine/nprogress";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
@@ -11,10 +12,11 @@ import { i18n } from "@lingui/core";
 
 import { routeTree } from "@/routeTree.gen";
 import { theme } from "./theme";
-import { ErrorBoundary } from "@/shared/ui";
+import { ErrorBoundary, LoadingOverlay } from "@/shared/ui";
 
 import "@mantine/core/styles.css";
 import "@mantine/notifications/styles.css";
+import "@mantine/nprogress/styles.css";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -25,6 +27,15 @@ const queryClient = new QueryClient({
 
 const router = createRouter({ routeTree, defaultPreload: "intent" });
 
+// Router navigation progress integration
+router.subscribe("onBeforeLoad", () => {
+  nprogress.start();
+});
+
+router.subscribe("onLoad", () => {
+  nprogress.complete();
+});
+
 declare module "@tanstack/react-router" {
   interface Register {
     router: typeof router;
@@ -32,12 +43,20 @@ declare module "@tanstack/react-router" {
 }
 
 export function App() {
+  const [isInitialLoading, setIsInitialLoading] = useState(true);
+
   useEffect(() => {
     const loadLocale = async () => {
       const { dynamicActivateLocale, getClientLocale } = await import("@/shared/locales");
       await dynamicActivateLocale(getClientLocale());
+      // Hide initial loader after locale is loaded
+      setIsInitialLoading(false);
     };
-    loadLocale().catch(console.error);
+    loadLocale().catch((error) => {
+      console.error("Failed to load locale:", error);
+      // Hide loader even on error to prevent infinite loading
+      setIsInitialLoading(false);
+    });
   }, []);
 
   return (
@@ -46,7 +65,9 @@ export function App() {
         <ErrorBoundary>
           <MantineProvider theme={theme}>
             <ModalsProvider>
+              <NavigationProgress />
               <Notifications />
+              <LoadingOverlay visible={isInitialLoading} />
               <QueryClientProvider client={queryClient}>
                 <RouterProvider router={router} />
                 <ReactQueryDevtools initialIsOpen={false} />

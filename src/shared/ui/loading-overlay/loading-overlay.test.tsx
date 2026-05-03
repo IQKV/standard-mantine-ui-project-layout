@@ -15,6 +15,7 @@ describe("LoadingOverlay", () => {
       </TestWrapper>,
     );
 
+    // When not visible, the component returns null but Mantine may inject styles
     expect(screen.queryByText("Loading...")).not.toBeInTheDocument();
   });
 
@@ -49,15 +50,24 @@ describe("LoadingOverlay", () => {
     expect(screen.getByText("Loading...")).toBeInTheDocument();
   });
 
-  it("renders loader component when visible", () => {
-    render(
+  it("accepts custom zIndex prop", () => {
+    const { container } = render(
       <TestWrapper>
-        <LoadingOverlay visible />
+        <LoadingOverlay visible zIndex={9999} />
       </TestWrapper>,
     );
 
-    // Mantine Loader component should be present
-    const loader = document.querySelector("[data-loader]");
-    expect(loader || screen.getByText("Loading...")).toBeInTheDocument();
+    const overlay = container.querySelector('[class*="overlay"]');
+    expect(overlay).toBeInTheDocument();
+  });
+
+  it("renders without message when empty string provided", () => {
+    render(
+      <TestWrapper>
+        <LoadingOverlay visible message="" />
+      </TestWrapper>,
+    );
+
+    expect(screen.queryByText("Loading...")).not.toBeInTheDocument();
   });
 });

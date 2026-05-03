@@ -32,9 +32,11 @@ React + TypeScript + Vite + TanStack Router + Mantine UI Template
 - **Mantine UI 8** - Modern React components library with comprehensive theming
 - **Mantine Notifications** - Toast notification system
 - **Mantine Modals** - Modal manager with context
+- **Mantine NProgress** - Slim top loading bar for page transitions
 - **Tabler Icons** - Beautiful SVG icons optimized for React
 - **XYFlow React** - Node-based UI / flow diagrams
-  -️ **Lottie Web** - High-quality animations
+- **Lottie Web** - High-quality animations
+- **Loading States** - Initial page loader + automatic navigation progress bar
 
 ### 🔄 **State Management & Data**
 
