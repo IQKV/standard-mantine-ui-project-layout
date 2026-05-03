@@ -10,7 +10,7 @@
 
 ---
 
-# 🚀 IQScaffold Mantine UI Project Layout
+# 🚀 IQ Key Value Mantine UI Project Layout
 
 ## 📜 Description
 

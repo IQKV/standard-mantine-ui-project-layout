@@ -2,64 +2,74 @@
 
 ## Project Overview
 
-**IQ Key Value Auth Portal** - A dedicated authentication service built with Feature-Sliced Design (FSD) architecture. This is a standalone authentication gateway that handles user sign up, sign in, password reset, and redirects to the main application upon successful login.
+**IQ Key Value Mantine UI Project Layout** - A modern, feature-rich template for building scalable React applications with the latest tools and best practices. Built with Feature-Sliced Design (FSD) architecture, this template provides a production-ready foundation for React projects with comprehensive tooling, testing infrastructure, and internationalization support.
 
 **Key Characteristics:**
 
-- Type-safe development with strict TypeScript configuration
-- Feature-Sliced Design with enforced layer boundaries (architecture tests)
-- Comprehensive error handling with RFC 7807 Problem Details support
-- Modern build tooling with Vite 8 and SWC
-- Internationalization with Lingui (lazy-loaded translations)
-- Mock Service Worker (MSW) for API mocking in development
-- Production-ready with Docker and CI/CD workflows
+- Type-safe development with TypeScript 6 strict configuration
+- Feature-Sliced Design with enforced layer boundaries (automated architecture tests)
+- Modern build tooling with Vite 8 and SWC compiler
+- Internationalization with Lingui (lazy-loaded translations for en, ru, it)
+- Mock Service Worker (MSW) for API mocking in development and testing
+- Comprehensive testing with Vitest and Playwright
+- Production-ready with Docker Compose and CI/CD workflows
+- Runtime configuration override support via `public/config.js`
 
 ## Tech Stack
 
 ### Core Framework
 
 - **React 19** - Latest React with concurrent features and improved performance
-- **TypeScript** - Strict type safety with latest language features
-- **Vite 8** - Lightning-fast development with SWC compiler
-- **PNPM** - Fast, disk space efficient package manager
+- **TypeScript 6** - Strict type safety with latest language features
+- **Vite 8** - Lightning-fast development with instant HMR and optimized builds
+- **PNPM 10.33.0** - Fast, disk space efficient package manager (required)
 
 ### UI & Styling
 
-- **Mantine UI v8** - Complete component library with theming system
-- **Mantine Extensions** - Form, Hooks, Modals, Notifications
-- **Tabler Icons** - 4000+ SVG icons optimized for React
-- **PostCSS** - CSS processing with Mantine preset
+- **Mantine UI v8** - Modern React components library with comprehensive theming
+- **Mantine Extensions** - Carousel, Charts, Dates, Dropzone, Form, Hooks, Modals, Notifications, NProgress, Tiptap
+- **Tabler Icons** - Beautiful SVG icons optimized for React (4000+ icons)
+- **PostCSS** - CSS processing with Mantine preset and simple vars
+- **XYFlow React** - Node-based UI and flow diagrams
+- **Lottie Web** - High-quality animations
 
 ### Routing & State
 
-- **TanStack Router v1** - Type-safe routing with code splitting and file-based routing
-- **TanStack Query v5** - Server state management and caching
+- **TanStack Router v1** - Type-safe file-based routing with code splitting and search params
+- **TanStack Query v5** - Powerful data synchronization and caching
 - **Zustand** - Lightweight client state management with Immer middleware
 - **nuqs** - Type-safe URL search params state management
+- **React Hook Form** - Performant form validation and management
 
 ### Data & API
 
-- **Axios** - HTTP client with interceptors and RFC 7807 error handling
-- **Zod** - Runtime type validation and schema parsing
-- **Mantine Form** - Form state management with Zod resolver
-- **Enhanced Form Hook** - Custom wrapper for Mantine forms with standardized Zod validation
-- **Mock Service Worker (MSW)** - API mocking for development and testing
+- **Axios** - Promise-based HTTP client for API calls
+- **Zod 4** - Runtime type validation and schema parsing
+- **Mantine Form** - Form state management with Zod resolver integration
+- **Mock Service Worker (MSW)** - Client-agnostic API mocking for development and testing
+- **JS Cookie** - Simple cookie management
+- **jwt-decode** - JWT token decoding
 
 ### Development & Quality
 
-- **Vitest** - Fast unit testing with coverage and UI
-- **Playwright** - Reliable end-to-end testing with auto-start dev server
-- **oxlint** - Modern linting
-- **oxfmt** - Code formatting
-- **Stylelint** - CSS/SCSS linting
-- **Husky** - Git hooks for quality gates
+- **Vitest** - Fast unit testing with coverage reports and UI
+- **Playwright** - Reliable end-to-end testing (Chromium, Firefox, WebKit)
+- **Testing Library** - Simple and complete testing utilities for React
+- **OxLint** - Ultra-fast linting with type-aware rules
+- **OxFmt** - Fast opinionated code formatting
+- **Stylelint** - CSS linting for consistent styling
+- **Husky** - Git hooks for pre-commit validation
 - **Commitlint** - Conventional commit message validation
 - **Knip** - Dead code elimination and dependency analysis
 
-### Internationalization & Accessibility
+### Internationalization & DevOps
 
-- **Lingui** - Modern i18n with macro support and pluralization
-- **Built-in A11y** - Accessibility features and testing
+- **Lingui 6** - Modern i18n framework with macro support and pluralization
+- **Locales** - English, Russian, Italian with PO-based catalogs
+- **GitHub Actions** - CI/CD workflows for build, test, and PR validation
+- **Dependabot** - Automated dependency updates and security monitoring
+- **Release-it** - Automated versioning and changelog generation
+- **Docker Compose** - Local SonarQube instance for code quality analysis
 
 ## Architecture: Feature-Sliced Design (FSD)
 
@@ -77,7 +87,7 @@ src/
 └── architecture.test.ts  # Automated FSD compliance tests
 ```
 
-**Note:** This project includes a `processes/` layer for cross-cutting concerns like authentication and tenant management that span multiple features.
+**Note:** This template includes a `processes/` layer for cross-cutting concerns that span multiple features (e.g., authentication flows, multi-tenant management, global state orchestration).
 
 ### FSD Layer Rules (CRITICAL - ENFORCED BY TESTS)
 
@@ -595,11 +605,12 @@ After applying approved changes:
 4. **Feature-Sliced Structure**: Organize by features, not by file types
 5. **Lingui Integration**: Use `msg` macro for labels and `useLingui()._()` for runtime translation
 
-**Example: A generic FormField pattern (project currently uses dedicated auth field components like `EmailField`, `PasswordField`, etc.)**
+**Example: A generic FormField pattern (example for future implementation)**
 
 ```tsx
 // shared/ui/form-field/form-field.tsx
 // Example pattern for a generic field component - supports many field types
+// NOTE: This is a pattern example - implement based on your project needs
 import { TextInput, PasswordInput, Select, Checkbox } from "@mantine/core";
 import { UseFormReturnType } from "@mantine/form";
 import { MessageDescriptor } from "@lingui/core";
@@ -668,10 +679,11 @@ import { t } from "@lingui/core/macro";
 
 #### TanStack Query for Server State with Enhanced Error Handling
 
-**The project has a sophisticated `useFormMutation` hook with RFC 7807 support:**
+**Pattern for implementing `useFormMutation` hook (example for future implementation):**
 
 ```tsx
-// shared/lib/use-form-mutation.ts (ACTUAL IMPLEMENTATION)
+// shared/lib/use-form-mutation.ts (EXAMPLE PATTERN)
+// Implement this pattern when building form-heavy features
 import { useMutation, UseMutationOptions } from "@tanstack/react-query";
 import { UseFormReturnType } from "@mantine/form";
 import { normalizeAxiosError, toMantineErrors, shouldShowError, getErrorTitle } from "./http-error";
@@ -741,7 +753,7 @@ export function useFormMutation<TData, TVariables, TContext = unknown>(
 }
 ```
 
-**Key Features:**
+**Key Features (when implemented):**
 
 - Automatic RFC 7807 Problem Details parsing
 - Field-level error mapping to Mantine forms
@@ -751,10 +763,10 @@ export function useFormMutation<TData, TVariables, TContext = unknown>(
 
 #### Zustand for Client State (Process Layer Pattern)
 
-**The project uses Zustand in the `processes/` layer for cross-cutting concerns:**
+**Pattern for using Zustand in the `processes/` layer (example for future implementation):**
 
 ```tsx
-// processes/auth/model/auth-store.ts (simplified example pattern)
+// processes/auth/model/auth-store.ts (EXAMPLE PATTERN)
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
 import { persist } from "zustand/middleware";
@@ -843,10 +855,10 @@ export const useIsAuthenticated = () => useAuthStore((state) => state.isAuthenti
 
 ### API Service Standards with RFC 7807 Support
 
-**The project has sophisticated error handling with RFC 7807 Problem Details:**
+**Pattern for implementing API client with error handling (example for future implementation):**
 
 ```tsx
-// shared/api/base.ts (ACTUAL IMPLEMENTATION)
+// shared/api/base.ts (EXAMPLE PATTERN)
 import axios, { type AxiosError, type AxiosRequestConfig, type AxiosInstance } from "axios";
 import { getConfig, getFinalMSWConfig } from "@/app/config";
 import { normalizeAxiosError } from "@/shared/lib/http-error";
@@ -969,7 +981,7 @@ export function getFieldErrors(err: unknown): Record<string, string[]>;
 export function toMantineErrors(err: unknown): Record<string, string>;
 ```
 
-**Key Features:**
+**Key Features (when implemented):**
 
 - Cookie-based authentication (withCredentials: true)
 - Multi-tenant support with X-Tenant-ID header
@@ -979,12 +991,12 @@ export function toMantineErrors(err: unknown): Record<string, string>;
 - Retryable error detection
 - Type-safe error handling
 
-### Form Handling Standards (ACTUAL PROJECT PATTERNS)
+### Form Handling Standards (EXAMPLE PATTERNS)
 
-**The project uses centralized validation schemas with Lingui i18n:**
+**Pattern for centralized validation schemas with Lingui i18n (example for future implementation):**
 
 ```tsx
-// shared/lib/form-validation.ts (ACTUAL IMPLEMENTATION)
+// shared/lib/form-validation.ts (EXAMPLE PATTERN)
 import { z } from "zod";
 import { zodResolver } from "mantine-form-zod-resolver";
 import { t } from "@lingui/core/macro";
@@ -1104,7 +1116,7 @@ export function useForm<T extends Record<string, any>>(
 }
 ```
 
-**Feature Implementation (ACTUAL SIGNIN FORM):**
+**Feature Implementation Example (Sign-in Form Pattern):**
 
 ```tsx
 // features/signin-form/model/validation.ts
@@ -1181,67 +1193,46 @@ export type { SignInFormValues } from "./model/types";
 - Use `formSchemas` for common forms (signIn, signUp, resetPassword)
 - All features MUST export through `index.ts` (enforced by tests)
 
-## Environment Setup (ACTUAL PROJECT)
+## Environment Setup
 
 ### Development Requirements
 
-- **Node.js**: >= 24.0.0 (LTS)
-- **Package Manager**: pnpm (required, version 10.33.0)
-- **Editor**: VS Code with recommended extensions
+- **Node.js**: >= 24.0.0 (LTS recommended)
+- **Package Manager**: pnpm 10.33.0 (required - specified in package.json)
+- **Editor**: VS Code with recommended extensions (optional but recommended)
 
-### Environment Variables (ACTUAL)
+### Environment Variables (TEMPLATE DEFAULTS)
 
 ```env
 # Backend API Configuration
-VITE_API_SERVER_URL=http://localhost:8080  # User service backend
+VITE_API_SERVER_URL=http://localhost:8080/api  # Backend API base URL
 
-# Domain Configuration
-VITE_AUTH_DOMAIN_AUTH=https://auth.iqkv.site  # Auth portal domain
-VITE_AUTH_DOMAIN_APP=https://app.iqkv.site    # Main app domain
-
-# Redirect Configuration
-VITE_AUTH_REDIRECT_AFTER_LOGIN=VITE_AUTH_DOMAIN_APP  # After successful login
-VITE_AUTH_REDIRECT_AFTER_LOGOUT={AUTH_DOMAIN}/login  # After logout
-VITE_AUTH_REDIRECT_AFTER_SIGNUP={AUTH_DOMAIN}/login  # After signup
-
-# Development Configuration
-VITE_ENABLE_MSW=true           # Enable Mock Service Worker
-VITE_LOG_LEVEL=info            # Logging: silent/info/debug
+# Application Configuration
+VITE_LOG_LEVEL=info            # Logging level: silent/info/debug
+VITE_ENABLE_MSW=true           # Enable Mock Service Worker for development
 TZ=UTC                         # Timezone
-NODE_ENV=development           # Environment
+NODE_ENV=development           # Environment: development/production
 ```
+
+**Note:** This is a template project. Customize environment variables based on your specific application needs. Variables can be overridden at runtime via `public/config.js` without rebuilding (useful for containerized deployments).
 
 ### Runtime Configuration Pattern
 
 ```tsx
-// app/config/runtime-env.ts (ACTUAL PATTERN)
+// app/config/runtime-env.ts (TEMPLATE PATTERN)
 const env = {
   VITE_API_SERVER_URL: import.meta.env.VITE_API_SERVER_URL,
-  VITE_AUTH_DOMAIN_AUTH: import.meta.env.VITE_AUTH_DOMAIN_AUTH,
-  VITE_AUTH_DOMAIN_APP: import.meta.env.VITE_AUTH_DOMAIN_APP,
   VITE_ENABLE_MSW: import.meta.env.VITE_ENABLE_MSW === "true",
   VITE_LOG_LEVEL: import.meta.env.VITE_LOG_LEVEL || "info",
+  // Add your custom environment variables here
 };
 
 export function getConfig<K extends keyof typeof env>(key: K): (typeof env)[K] {
   return env[key];
 }
-
-// app/config/auth-config.ts
-export function getAuthConfig() {
-  return {
-    domains: {
-      auth: getConfig("VITE_AUTH_DOMAIN_AUTH"),
-      app: getConfig("VITE_AUTH_DOMAIN_APP"),
-    },
-    redirects: {
-      afterLogin: getConfig("VITE_AUTH_REDIRECT_AFTER_LOGIN") || getConfig("VITE_AUTH_DOMAIN_APP"),
-      afterLogout: `${getConfig("VITE_AUTH_DOMAIN_AUTH")}/login`,
-      afterSignup: `${getConfig("VITE_AUTH_DOMAIN_AUTH")}/login`,
-    },
-  };
-}
 ```
+
+**Runtime Override:** Values in `public/config.js` (loaded before app bundle) take precedence over build-time `VITE_*` variables. This enables environment-specific configuration without rebuilding for containerized deployments.
 
 ### Editor Configuration
 
@@ -1260,27 +1251,36 @@ singleQuote: false
 
 ```bash
 # Development
-pnpm dev                    # Start development server
-pnpm build                  # Build for production
+pnpm dev                    # Start development server (http://localhost:5173)
+pnpm build                  # Build for production (includes i18n compile)
 pnpm preview               # Preview production build
 
 # Testing
-pnpm test                  # Run unit tests
-pnpm test:coverage         # Run tests with coverage
-pnpm test:ui               # Run tests with UI
-pnpm e2e                   # Run E2E tests
+pnpm test                  # Run unit tests with Vitest
+pnpm test:coverage         # Run tests with coverage report
+pnpm test:ui               # Run tests with UI interface
+pnpm test:arch             # Run FSD architecture boundary tests
+pnpm e2e                   # Run E2E tests with Playwright
+pnpm e2e:ui                # Run E2E tests with UI interface
+pnpm e2e:headed            # Run E2E tests in headed mode
+pnpm e2e:smoke             # Run smoke tests on Chromium
+pnpm playwright:install    # Install Playwright browsers (first time)
 
 # Code Quality
-pnpm lint                  # Run ESLint
-pnpm lint:fix              # Fix ESLint issues
-pnpm formatter:check       # Check formatting
-pnpm formatter:write       # Format code
+pnpm lint                  # Run OxLint (type-aware)
+pnpm lint:fix              # Fix linting issues and format
+pnpm formatter:check       # Check code formatting with OxFmt
+pnpm formatter:write       # Format code with OxFmt
 pnpm type-check            # TypeScript type checking
+pnpm knip                  # Detect unused exports and dependencies
 
 # Internationalization
-pnpm messages:extract      # Extract translation messages
-pnpm messages:compile      # Compile translations
+pnpm messages:extract      # Extract translation messages from source
+pnpm messages:compile      # Compile PO catalogs to TypeScript
 
+# Maintenance
+pnpm cleanup               # Remove dist, .tanstack, coverage, caches
+pnpm cleanup:all           # Full cleanup including node_modules
 ```
 
 ## Testing Strategy
@@ -1586,14 +1586,14 @@ export function usePrefetchUsers() {
 }
 ```
 
-## Internationalization with Lingui (ACTUAL IMPLEMENTATION)
+## Internationalization with Lingui
 
-**The project uses lazy-loaded translations with dynamic locale activation:**
+**The template uses lazy-loaded translations with dynamic locale activation:**
 
 ### Setup and Usage
 
 ```tsx
-// shared/locales/index.ts (ACTUAL IMPLEMENTATION)
+// shared/locales/index.ts (TEMPLATE IMPLEMENTATION)
 import { i18n } from "@lingui/core";
 
 export async function dynamicActivateLocale(locale: string) {
