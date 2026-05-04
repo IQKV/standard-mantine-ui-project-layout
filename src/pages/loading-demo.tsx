@@ -51,9 +51,7 @@ function LoadingDemoPage() {
             <Text size="sm" c="dimmed" mb="md">
               Full-screen centered loader shown on first app load (while locale initializes).
             </Text>
-            <Code block>
-              {`<LoadingOverlay visible={isInitialLoading} />`}
-            </Code>
+            <Code block>{`<LoadingOverlay visible={isInitialLoading} />`}</Code>
             <Group mt="md">
               <Button onClick={handleOverlayDemo}>Demo LoadingOverlay (2s)</Button>
             </Group>
@@ -95,12 +93,8 @@ function LoadingDemoPage() {
               <Text size="sm">
                 ✅ Automatic router integration via <Code>router.subscribe()</Code>
               </Text>
-              <Text size="sm">
-                ✅ Theme-aware (respects dark mode and color scheme)
-              </Text>
-              <Text size="sm">
-                ✅ Accessible with proper keyboard handling
-              </Text>
+              <Text size="sm">✅ Theme-aware (respects dark mode and color scheme)</Text>
+              <Text size="sm">✅ Accessible with proper keyboard handling</Text>
             </Stack>
           </div>
         </Stack>

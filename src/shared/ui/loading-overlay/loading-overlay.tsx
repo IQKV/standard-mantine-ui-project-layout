@@ -1,4 +1,10 @@
-import { Center, Loader, LoadingOverlay as MantineLoadingOverlay, Stack, Text } from "@mantine/core";
+import {
+  Center,
+  Loader,
+  LoadingOverlay as MantineLoadingOverlay,
+  Stack,
+  Text,
+} from "@mantine/core";
 
 interface LoadingOverlayProps {
   visible: boolean;
