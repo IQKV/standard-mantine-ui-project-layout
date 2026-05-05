@@ -82,7 +82,7 @@ Values set on `window.*` in `public/config.js` take precedence over build-time v
 
 ## 🌍 Internationalization
 
-Supported locales are defined in `lingui.config.ts`. Default: `en`, `ru`, `it`.
+Supported locales are defined in `lingui.config.ts`. Default: `en`.
 
 ```shell
 # After adding new translatable strings:
