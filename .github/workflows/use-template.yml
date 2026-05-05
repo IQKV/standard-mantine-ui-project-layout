@@ -19,7 +19,7 @@ jobs:
       - name: "Modify/remove files before use"
         run: |
           rm -f "./.github/workflows/use-template.yml"
-          mv README.md README.boilerplate.md
+          unlink README.md
           mv README.template.md README.md
 
       - name: "Update commit"
