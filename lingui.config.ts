@@ -3,7 +3,9 @@ import { formatter } from "@lingui/format-po";
 
 const config: LinguiConfig = {
   locales: [
-    "en", // English
+    "en-US", // English (US)
+    "ru", // Russian
+    "it", // Italian
   ],
   catalogs: [
     {
@@ -11,10 +13,10 @@ const config: LinguiConfig = {
       include: ["src"],
     },
   ],
-  sourceLocale: "en",
+  sourceLocale: "en-US",
   format: formatter({ lineNumbers: false }),
   fallbackLocales: {
-    default: "en",
+    default: "en-US",
   },
   compileNamespace: "ts",
 };

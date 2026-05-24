@@ -1,12 +1,12 @@
 import { i18n } from "@lingui/core";
-import { messages } from "../../../locales/en";
+import { messages } from "../../../locales/en-US";
 
-i18n.load("en", messages);
-i18n.activate("en");
+i18n.load("en-US", messages);
+i18n.activate("en-US");
 
-export type SupportedLocales = "en" | "ru" | "it";
+export type SupportedLocales = "en-US" | "ru" | "it";
 
-export const availableLocales = ["en", "ru", "it"];
+export const availableLocales = ["en-US", "ru", "it"];
 
 export const getClientLocale = () => {
   if (typeof window !== "undefined") {
@@ -17,11 +17,11 @@ export const getClientLocale = () => {
     if (storedLocale) return getSupportedLocale(storedLocale);
     return getSupportedLocale(window.navigator.language);
   }
-  return "en";
+  return "en-US";
 };
 
 export async function dynamicActivateLocale(locale: string) {
-  const activeLocale = availableLocales.includes(locale) ? locale : "en";
+  const activeLocale = availableLocales.includes(locale) ? locale : "en-US";
   const module = await import(`../../../locales/${activeLocale}.ts`);
   i18n.load(activeLocale, module.messages);
   i18n.activate(activeLocale);
@@ -35,5 +35,5 @@ export const getSupportedLocale = (userLocale: string) => {
   const normalized = userLocale.toLowerCase();
   if (availableLocales.includes(normalized)) return normalized;
   const main = normalized.split("-")[0];
-  return availableLocales.find((l) => l.startsWith(main)) ?? "en";
+  return availableLocales.find((l) => l.startsWith(main)) ?? "en-US";
 };
