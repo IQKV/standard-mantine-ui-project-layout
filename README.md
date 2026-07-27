@@ -10,7 +10,7 @@
 
 ---
 
-# 🚀 IQ Key Value Mantine UI Project Layout
+# 🚀 iQ Key Value Mantine UI Project Layout
 
 ## 📜 Description
 

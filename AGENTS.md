@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-**IQ Key Value Mantine UI Project Layout** - A modern, feature-rich template for building scalable React applications with the latest tools and best practices. Built with Feature-Sliced Design (FSD) architecture, this template provides a production-ready foundation for React projects with comprehensive tooling, testing infrastructure, and internationalization support.
+**iQ Key Value Mantine UI Project Layout** - A modern, feature-rich template for building scalable React applications with the latest tools and best practices. Built with Feature-Sliced Design (FSD) architecture, this template provides a production-ready foundation for React projects with comprehensive tooling, testing infrastructure, and internationalization support.
 
 **Key Characteristics:**
 
